@@ -37,7 +37,7 @@ public class Gui extends JFrame implements ActionListener {
 
 	private void initializeFrame() {
 		setTitle("Sistema de Cadastro de Impressoras");
-		setSize(625, 325);
+		setSize(625, 350);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setResizable(false);
@@ -74,8 +74,8 @@ public class Gui extends JFrame implements ActionListener {
 		RetiradaRecurso = new JButton("Retirada de Recursos", RetiradaIcon);
 
 		JPanel southPanel = new JPanel();
-		southPanel.setLayout(new GridLayout(1, 2, 5, 5));
-		JPanel aux1 = new JPanel(new FlowLayout(FlowLayout.CENTER));
+		southPanel.setLayout(new GridLayout(1, 2, 0, 0));
+		JPanel aux1 = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		JPanel aux2 = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 		SenhaButton = new JButton("Alterar Senha", AlterarSenhaIcon);
 		LogoutButton = new JButton("Logout", LogoutIcon);
@@ -90,7 +90,7 @@ public class Gui extends JFrame implements ActionListener {
 		ImageIcon UserPanel = new ImageIcon(getClass().getResource("/IMG/cadastro.png"));
 		if (isAdmin) {
 			usuariosButton = new JButton("Usuários", UserPanel);
-			JPPrincipal.add(usuariosButton);
+			aux1.add(usuariosButton);
 			usuariosButton.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
